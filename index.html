@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Analyzer — Dress for the Day</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>🌤️ Weather Analyzer</h1>
+      <p class="tagline">Check the weather and find out what to wear.</p>
+    </header>
+
+    <form id="search-form" class="search">
+      <input
+        id="city-input"
+        type="text"
+        placeholder="Enter a city (e.g. London, Tokyo, New York)"
+        autocomplete="off"
+        aria-label="City name"
+      />
+      <button type="submit" id="search-btn">Analyze</button>
+      <button type="button" id="locate-btn" title="Use my location">📍</button>
+    </form>
+
+    <p id="status" class="status" role="status"></p>
+
+    <section id="result" class="result hidden">
+      <div class="now card">
+        <div class="now-main">
+          <span id="now-icon" class="now-icon"></span>
+          <div>
+            <h2 id="place" class="place"></h2>
+            <p id="now-desc" class="now-desc"></p>
+          </div>
+        </div>
+        <div class="now-temp">
+          <span id="now-temp"></span>
+          <small id="now-feels"></small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat card"><span class="stat-label">Humidity</span><span id="humidity" class="stat-value"></span></div>
+        <div class="stat card"><span class="stat-label">Wind</span><span id="wind" class="stat-value"></span></div>
+        <div class="stat card"><span class="stat-label">High / Low</span><span id="highlow" class="stat-value"></span></div>
+        <div class="stat card"><span class="stat-label">Rain chance</span><span id="rain" class="stat-value"></span></div>
+        <div class="stat card"><span class="stat-label">UV index</span><span id="uv" class="stat-value"></span></div>
+      </div>
+
+      <div class="outfit card">
+        <h3>👕 What to wear</h3>
+        <p id="outfit-summary" class="outfit-summary"></p>
+        <ul id="outfit-list" class="outfit-list"></ul>
+      </div>
+
+      <div class="forecast card">
+        <h3>5-day outlook</h3>
+        <div id="forecast-days" class="forecast-days"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Data from <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> · No API key required</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
